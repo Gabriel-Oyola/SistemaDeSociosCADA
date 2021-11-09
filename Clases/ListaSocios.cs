@@ -123,5 +123,22 @@ namespace SistemaDeSociosCADA.Clases
             }
             return res;
         }
+
+        public bool DeletePersona(Persona persona)
+        {
+            bool resp = false;
+            for (int i = 0; i < DTS.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(DTS.Rows[i]["N°Socio"])==persona.NumSocio)
+                {
+                    DTS.Rows[i].Delete();
+                    DTS.WriteXml("ListaSocios.xml");
+                    resp = true;
+                    break;
+                }
+            }
+
+            return resp;
+        }
     }
 }

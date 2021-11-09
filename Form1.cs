@@ -95,5 +95,31 @@ namespace SistemaDeSociosCADA
                 txtBuscar.SelectAll();
             }
         }
+
+        private void btEliminar_Click(object sender, EventArgs e)
+        {
+            if (Lista.DeletePersona(per))
+            {
+                limpiar();
+            }
+            else
+            {
+                MessageBox.Show("El registro" + per.NumSocio + "no se pudo borrar");
+                limpiar();
+            }
+            per = new Persona();
+
+        }
+
+        private void limpiar()
+        {
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            txtNacimiento.Text = "";
+            txtEdad.Text = "";
+            txtDocumento.Text = "";
+            txtDomicilio.Text = "";
+
+        }
     }
 }

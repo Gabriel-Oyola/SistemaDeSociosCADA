@@ -281,6 +281,7 @@ namespace SistemaDeSociosCADA
             this.btEliminar.TabIndex = 24;
             this.btEliminar.Text = "Eliminar";
             this.btEliminar.UseVisualStyleBackColor = true;
+            this.btEliminar.Click += new System.EventHandler(this.btEliminar_Click);
             // 
             // dgSocios
             // 
