@@ -50,6 +50,7 @@ namespace SistemaDeSociosCADA
             per.Carnet = (string)cbCarnet.SelectedItem;
             per.Platea = (string)cbPlatea.SelectedItem;
             per.Estado = (string)cbEstado.SelectedItem;
+            per.DiaModificacion = DateTime.Now.ToShortDateString();
 
             if (!Lista.UpdatePersona(per))
             {

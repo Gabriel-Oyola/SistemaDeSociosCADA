@@ -23,6 +23,8 @@ namespace SistemaDeSociosCADA.Clases
 
         public string Estado { get; set; }
 
+        public string DiaModificacion { get; set; }
+
         public bool validar()
         {
             bool resp = false;

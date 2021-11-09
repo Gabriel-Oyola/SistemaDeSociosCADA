@@ -26,6 +26,7 @@ namespace SistemaDeSociosCADA.Clases
             DTS.Columns.Add("Carnet");
             DTS.Columns.Add("Platea");
             DTS.Columns.Add("Estado");
+            DTS.Columns.Add("Ult.Modificacion");
 
             LeerDTSArchivo();
         }
@@ -71,6 +72,7 @@ namespace SistemaDeSociosCADA.Clases
                     DTS.Rows[NumeroRegistroNuevo]["Carnet"] = persona.Carnet;
                     DTS.Rows[NumeroRegistroNuevo]["Platea"] = persona.Platea;
                     DTS.Rows[NumeroRegistroNuevo]["Estado"] = persona.Estado;
+                    DTS.Rows[NumeroRegistroNuevo]["Ult.Modificacion"] = persona.DiaModificacion;
 
                     DTS.WriteXml("ListaSocios.xml");
                 }
@@ -89,6 +91,7 @@ namespace SistemaDeSociosCADA.Clases
                             DTS.Rows[i]["Carnet"] = persona.Carnet;
                             DTS.Rows[i]["Platea"] = persona.Platea;
                             DTS.Rows[i]["Estado"] = persona.Estado;
+                            DTS.Rows[i]["Ult.Modificacion"] = persona.DiaModificacion;
 
                             DTS.WriteXml("ListaSocios.xml");
                             break;
@@ -116,6 +119,7 @@ namespace SistemaDeSociosCADA.Clases
                     res.Carnet= DTS.Rows[i]["Carnet"].ToString();
                     res.Platea= DTS.Rows[i]["Platea"].ToString();
                     res.Estado= DTS.Rows[i]["Estado"].ToString();
+                    res.DiaModificacion = DTS.Rows[i]["Ult.Modificacion"].ToString();
 
                     break;
                 }

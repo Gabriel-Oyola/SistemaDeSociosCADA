@@ -29,6 +29,7 @@ namespace SistemaDeSociosCADA
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSocios));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +57,7 @@ namespace SistemaDeSociosCADA
             this.btAgregar = new System.Windows.Forms.Button();
             this.btEliminar = new System.Windows.Forms.Button();
             this.dgSocios = new System.Windows.Forms.DataGridView();
+            this.TMHoraPago = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgSocios)).BeginInit();
             this.SuspendLayout();
@@ -291,6 +293,10 @@ namespace SistemaDeSociosCADA
             this.dgSocios.Size = new System.Drawing.Size(790, 210);
             this.dgSocios.TabIndex = 25;
             // 
+            // TMHoraPago
+            // 
+            this.TMHoraPago.Enabled = true;
+            // 
             // FrmSocios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +367,7 @@ namespace SistemaDeSociosCADA
         private System.Windows.Forms.Button btAgregar;
         private System.Windows.Forms.Button btEliminar;
         private System.Windows.Forms.DataGridView dgSocios;
+        private System.Windows.Forms.Timer TMHoraPago;
     }
 }
 
