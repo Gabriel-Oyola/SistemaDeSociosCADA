@@ -55,8 +55,8 @@ namespace SistemaDeSociosCADA
             {
                 txtEdad.Focus();
                 txtEdad.SelectAll();
-                
-
+                MessageBox.Show("Edad no validad, intente de nuevo");
+              
             }
             else
             {
@@ -70,6 +70,30 @@ namespace SistemaDeSociosCADA
                 
             }
             per = new Persona();
+        }
+
+        private void btBuscar_Click(object sender, EventArgs e)
+        {
+            per = Lista.BuscarPersona(Convert.ToInt32(txtBuscar.Text));
+
+            if (per.NumSocio>0)
+            {
+                txtNombre.Text = per.Nombre;
+                txtApellido.Text = per.Apellido;
+                txtNacimiento.Text = per.Nacimiento;
+                txtEdad.Text = per.Edad.ToString();
+                txtDocumento.Text = per.Documento;
+                txtDomicilio.Text = per.Domicilio;
+
+                txtNombre.Focus();
+                txtBuscar.Text = "";
+            }
+            else
+            {
+                txtBuscar.Text = "La persona no existe";
+                txtBuscar.Focus();
+                txtBuscar.SelectAll();
+            }
         }
     }
 }

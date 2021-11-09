@@ -78,5 +78,29 @@ namespace SistemaDeSociosCADA.Clases
             return resp;
         }
         
+        public Persona BuscarPersona(int NumeroSocio)
+        {
+            Persona res = new Persona();
+            for (int i = 0; i < DTS.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(DTS.Rows[i]["N°Socio"]) == NumeroSocio)
+                {
+                    res.NumSocio = Convert.ToInt32(DTS.Rows[i]["N°Socio"]);
+                    res.Nombre = DTS.Rows[i]["Nombre"].ToString();
+                    res.Apellido= DTS.Rows[i]["Apellido"].ToString();
+                    res.Nacimiento= DTS.Rows[i]["Nacimiento"].ToString();
+                    res.Edad= Convert.ToInt32(DTS.Rows[i]["Edad"]);
+                    res.Documento= DTS.Rows[i]["Documento"].ToString();
+                    res.Domicilio=DTS.Rows[i]["Domicilio"].ToString();
+                    res.Carnet= DTS.Rows[i]["Carnet"].ToString();
+                    res.Platea= DTS.Rows[i]["Platea"].ToString();
+                    res.Estado= DTS.Rows[i]["Estado"].ToString();
+
+                    break;
+                }
+                
+            }
+            return res;
+        }
     }
 }

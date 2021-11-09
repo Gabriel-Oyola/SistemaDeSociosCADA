@@ -261,6 +261,7 @@ namespace SistemaDeSociosCADA
             this.btBuscar.TabIndex = 22;
             this.btBuscar.Text = "Buscar";
             this.btBuscar.UseVisualStyleBackColor = true;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // btAgregar
             // 
