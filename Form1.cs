@@ -38,5 +38,38 @@ namespace SistemaDeSociosCADA
             cbEstado.Items.Add("Inhablitado");
 
         }
+
+        private void btAgregar_Click(object sender, EventArgs e)
+        {
+            per.Nombre = txtNombre.Text;
+            per.Apellido = txtApellido.Text;
+            per.Nacimiento = txtNacimiento.Text;
+            per.Edad = Convert.ToInt32(txtEdad.Text);
+            per.Documento = txtDocumento.Text;
+            per.Domicilio = txtDomicilio.Text;
+            per.Carnet = (string)cbCarnet.SelectedItem;
+            per.Platea = (string)cbPlatea.SelectedItem;
+            per.Estado = (string)cbEstado.SelectedItem;
+
+            if (!Lista.UpdatePersona(per))
+            {
+                txtEdad.Focus();
+                txtEdad.SelectAll();
+                
+
+            }
+            else
+            {
+                txtNombre.Text = "";
+                txtApellido.Text = "";
+                txtNacimiento.Text = "";
+                txtEdad.Text = "";
+                txtDocumento.Text = "";
+                txtDomicilio.Text = "";
+                txtNombre.Focus();
+                
+            }
+            per = new Persona();
+        }
     }
 }

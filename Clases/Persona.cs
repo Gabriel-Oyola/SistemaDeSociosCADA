@@ -8,7 +8,7 @@ namespace SistemaDeSociosCADA.Clases
 {
     public class Persona
     {
-        public string NumSocio { get; set; }
+        public int NumSocio { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
 
@@ -16,6 +16,8 @@ namespace SistemaDeSociosCADA.Clases
 
         public int Edad { get; set; }
         public string Documento { get; set; }
+
+        public string Domicilio { get; set; }
         public string Carnet { get; set; }
         public string Platea { get; set; }
 

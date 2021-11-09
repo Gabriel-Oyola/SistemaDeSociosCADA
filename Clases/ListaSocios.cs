@@ -21,6 +21,7 @@ namespace SistemaDeSociosCADA.Clases
             DTS.Columns.Add("Apellido");
             DTS.Columns.Add("Nacimiento");
             DTS.Columns.Add("Edad");
+            DTS.Columns.Add("Documento");
             DTS.Columns.Add("Domicilio");
             DTS.Columns.Add("Carnet");
             DTS.Columns.Add("Platea");
@@ -49,5 +50,33 @@ namespace SistemaDeSociosCADA.Clases
 
         public int UltimoSocio { get; set; } = 0;
 
+        public bool UpdatePersona(Persona persona)
+        {
+            bool resp = persona.validar();
+            if (resp)
+            {
+                if (persona.NumSocio==0)
+                {
+                    UltimoSocio = UltimoSocio + 1;
+                    persona.NumSocio = UltimoSocio;
+                    DTS.Rows.Add();
+                    int NumeroRegistroNuevo = DTS.Rows.Count - 1;
+                    DTS.Rows[NumeroRegistroNuevo]["N°Socio"] = persona.NumSocio.ToString();
+                    DTS.Rows[NumeroRegistroNuevo]["Nombre"] = persona.Nombre;
+                    DTS.Rows[NumeroRegistroNuevo]["Apellido"] = persona.Apellido;
+                    DTS.Rows[NumeroRegistroNuevo]["Nacimiento"] = persona.Nacimiento;
+                    DTS.Rows[NumeroRegistroNuevo]["Edad"] = persona.Edad.ToString();
+                    DTS.Rows[NumeroRegistroNuevo]["Documento"] = persona.Documento;
+                    DTS.Rows[NumeroRegistroNuevo]["Domicilio"] = persona.Domicilio;
+                    DTS.Rows[NumeroRegistroNuevo]["Carnet"] = persona.Carnet;
+                    DTS.Rows[NumeroRegistroNuevo]["Platea"] = persona.Platea;
+                    DTS.Rows[NumeroRegistroNuevo]["Estado"] = persona.Estado;
+
+                    DTS.WriteXml("ListaSocios.xml");
+                }
+            }
+            return resp;
+        }
+        
     }
 }
