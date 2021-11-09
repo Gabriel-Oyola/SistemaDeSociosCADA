@@ -67,6 +67,9 @@ namespace SistemaDeSociosCADA
                 txtEdad.Text = "";
                 txtDocumento.Text = "";
                 txtDomicilio.Text = "";
+                cbCarnet.Text = "";
+                cbPlatea.Text = "";
+                cbEstado.Text = "";
                 txtNombre.Focus();
                 
             }
@@ -85,6 +88,9 @@ namespace SistemaDeSociosCADA
                 txtEdad.Text = per.Edad.ToString();
                 txtDocumento.Text = per.Documento;
                 txtDomicilio.Text = per.Domicilio;
+                cbCarnet.Text = per.Carnet;
+                cbPlatea.Text = per.Platea;
+                cbEstado.Text = per.Estado;
 
                 txtNombre.Focus();
                 txtBuscar.Text = "";
@@ -120,6 +126,9 @@ namespace SistemaDeSociosCADA
             txtEdad.Text = "";
             txtDocumento.Text = "";
             txtDomicilio.Text = "";
+            cbCarnet.Text = "";
+            cbPlatea.Text = "";
+            cbEstado.Text = "";
 
         }
     }
