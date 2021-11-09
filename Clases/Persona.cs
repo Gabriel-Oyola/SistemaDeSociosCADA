@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SistemaDeSociosCADA.Clases
 {
-    class Persona
+    public class Persona
     {
         public string NumSocio { get; set; }
         public string Nombre { get; set; }

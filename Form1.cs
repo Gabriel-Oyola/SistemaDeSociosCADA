@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaDeSociosCADA.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace SistemaDeSociosCADA
 {
     public partial class FrmSocios : Form
     {
+        Persona per = new Persona();
+
+        public ListaSocios Lista { get; set; } = new ListaSocios();
         public FrmSocios()
         {
             InitializeComponent();
+
+            dgSocios.DataSource = Lista.DTS;
         }
 
         private void FrmSocios_Load(object sender, EventArgs e)
