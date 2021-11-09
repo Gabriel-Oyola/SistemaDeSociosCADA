@@ -74,6 +74,27 @@ namespace SistemaDeSociosCADA.Clases
 
                     DTS.WriteXml("ListaSocios.xml");
                 }
+                else
+                {
+                    for (int i = 0; i < DTS.Rows.Count; i++)
+                    {
+                        if (Convert.ToInt32(DTS.Rows[i]["N°Socio"])==persona.NumSocio)
+                        {
+                            DTS.Rows[i]["Nombre"] = persona.Nombre;
+                            DTS.Rows[i]["Apellido"] = persona.Apellido;
+                            DTS.Rows[i]["Nacimiento"] = persona.Nacimiento;
+                            DTS.Rows[i]["Edad"] = persona.Edad.ToString();
+                            DTS.Rows[i]["Documento"] = persona.Documento;
+                            DTS.Rows[i]["Domicilio"] = persona.Domicilio;
+                            DTS.Rows[i]["Carnet"] = persona.Carnet;
+                            DTS.Rows[i]["Platea"] = persona.Platea;
+                            DTS.Rows[i]["Estado"] = persona.Estado;
+
+                            DTS.WriteXml("ListaSocios.xml");
+                            break;
+                        }
+                    }
+                }
             }
             return resp;
         }
